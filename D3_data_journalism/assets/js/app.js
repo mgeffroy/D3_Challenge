@@ -36,8 +36,8 @@ censusData.forEach(data => {
     data.age = +data.age ;
     data.healthcare = +data.healthcare; 
     data.poverty = +data.poverty;
-  //  var states = data.abbr;
-   // console.log(states);
+    data.abbr = data.abbr;
+    console.log(states);
 });
 
 // get y scale (height) scaleLinear
@@ -73,6 +73,17 @@ var circlesGroup = chartGroup.selectAll("circle")
 .attr("fill", "blue")
 .attr("opacity", ".5");
 
+
+// Create text group 
+var textGroup = chartGroup.selectAll("names")
+.data(censusData)
+.enter()
+.append("text")
+.attr("x", d => xLinearScale(d.age) )
+.attr("y", d => yLinearScale(d.smokes))
+.attr("fill", "black")
+.attr("opacity", ".5")
+.text(d => d.abbr);
 
 // Create the tooltips 
 
