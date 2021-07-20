@@ -20,12 +20,25 @@ var chartWidth = svgWidth - chartMargin.left - chartMargin.right;
 var svg = d3.select("#scatter").append("svg")
   .attr("height", svgHeight)
   .attr("width", svgWidth);
-  /// Create the svg (select, append, etc.)
 
+  /// Chartgroup??? 
+  var chartGroup = svg.append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+  /// Open CSV document 
 d3.csv("assets/data/data.csv").then(function(censusData){
     console.log(censusData);
 
-// cast everything so they become integers 
+// Choose which graph Smokers (censusData.smokes) vs. Age (censusData.age) or Healthcare (censusData.healthcare) vs. Poverty (censusData.poverty)
+    // cast everything so they become integers 
+censusData.forEach(data =>{
+    data.smokes = +data.smokes;
+    data.age = +data.age ;
+    data.healthcare = +data.healthcare; 
+    data.poverty = +data.poverty;
+    var states = data.abbr;
+    console.log(states);
+});
 
 
 // get y scale (height) scaleLinear
