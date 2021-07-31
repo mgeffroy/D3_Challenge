@@ -31,59 +31,60 @@ d3.csv("assets/data/data.csv").then(function(censusData){
 
 // Choose which graph Smokers (censusData.smokes) vs. Age (censusData.age) or Healthcare (censusData.healthcare) vs. Poverty (censusData.poverty)
     // cast everything so they become integers except state abbreviation used for the circles 
-censusData.forEach(data => {
+ censusData.forEach(data => {
     data.smokes = +data.smokes;
     data.age = +data.age ;
     data.healthcare = +data.healthcare; 
     data.poverty = +data.poverty;
-    data.abbr = data.abbr;
-    console.log(states);
+    statename = data.abbr;
+    console.log(statename);
 });
 
 // get y scale (height) scaleLinear
-var yLinearScale = d3.scaleLinear()
-      .domain([0, d3.max(censusData, d => d.smokes)])
-      .range([chartHeight, 0])
+// var yLinearScale = d3.scaleLinear()
+//       .domain([0, d3.max(censusData, d => d.smokes)])
+//       .range([chartHeight, 0])
 
 // get x scale (width) also scaleLinear
-var xLinearScale = d3.scaleLinear()
-      .domain([20, d3.max(censusData, d => d.age)])
-      .range([0, chartWidth]);
+// var xLinearScale = d3.scaleLinear()
+//       .domain([20, d3.max(censusData, d => d.age)])
+//       .range([0, chartWidth]);
 
 // create axis functions
-  var bottomAxis = d3.axisBottom(xLinearScale);
-  var leftAxis = d3.axisLeft(yLinearScale);
+  // var bottomAxis = d3.axisBottom(xLinearScale);
+  // var leftAxis = d3.axisLeft(yLinearScale);
 
   //append data to chart 
-  chartGroup.append("g")
-      .attr("transform", `translate(0, ${chartHeight})`)
-      .call(bottomAxis);
+  // chartGroup.append("g")
+  //     .attr("transform", `translate(0, ${chartHeight})`)
+  //     .call(bottomAxis);
 
-    chartGroup.append("g")
-      .call(leftAxis);
+  //   chartGroup.append("g")
+  //     .call(leftAxis);
 
 // select all, select data, enter data, append the circles and add attributes 
-var circlesGroup = chartGroup.selectAll("circle")
-.data(censusData)
-.enter()
-.append("circle")
-.attr("cx", d => xLinearScale(d.age))
-.attr("cy", d => yLinearScale(d.smokes))
-.attr("r", "15")
-.attr("fill", "blue")
-.attr("opacity", ".5");
+// var circlesGroup = chartGroup.selectAll("circle")
+// .data(censusData)
+// .enter()
+// .append("circle")
+// .attr("cx", d => xLinearScale(d.age))
+// .attr("cy", d => yLinearScale(d.smokes))
+// .attr("r", "15")
+// .attr("fill", "blue")
+// .attr("opacity", ".5");
 
 
 // Create text group 
-var textGroup = chartGroup.selectAll("names")
-.data(censusData)
-.enter()
-.append("text")
-.attr("x", d => xLinearScale(d.age) )
-.attr("y", d => yLinearScale(d.smokes))
-.attr("fill", "black")
-.attr("opacity", ".5")
-.text(d => d.abbr);
+// var textGroup = chartGroup.append("g").selectAll("text")
+// .data(censusData)
+// .enter()
+// .append("text")
+// .classed("text", true)
+// .attr("x", d => xLinearScale(d.age) )
+// .attr("y", d => yLinearScale(d.smokes))
+// .text(d => d.abbr)
+// .attr("fill", "black")
+// .attr("opacity", ".5");
 
 // Create the tooltips 
 
