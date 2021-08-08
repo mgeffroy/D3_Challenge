@@ -94,7 +94,7 @@ var labelGroup = chartGroup.append("g")
 var xLabel = labelGroup.append("text")
 .attr("x", 0)
 .attr("y", 20)
-.text("In Poverty (%) ")
+.text("Age (years) ")
 .style("font-weight", "bold")
 
 // Create y label variable
@@ -103,7 +103,7 @@ chartGroup.append("text")
 .attr("x", 0 - (chartHeight/2))
 .attr("y", 0 - chartMargin.left)
 .attr("dy", "1em")
-.text("Locks Healthcare (%)")
+.text("Smokers (%)")
 .style("font-weight", "bold")    
             
 
