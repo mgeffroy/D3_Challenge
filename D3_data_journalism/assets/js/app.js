@@ -69,8 +69,8 @@ var circlesGroup = chartGroup.selectAll("circle")
 .append("circle")
 .attr("cx", d => xLinearScale(d.age))
 .attr("cy", d => yLinearScale(d.smokes))
-.attr("r", "15")
-.attr("fill", "blue")
+.attr("r", "20")
+.attr("fill", "limegreen")
 .attr("opacity", ".5");
 
 
@@ -85,19 +85,20 @@ var textGroup = chartGroup.append("g").selectAll("text")
 .text(d => d.abbr)
 .attr("fill", "black")
 .attr("opacity", ".5");
+ 
 
 // Create the Axis labels
 var labelGroup = chartGroup.append("g")
 .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 20 })`);
 
-// Create x label variable
+// Create x label
 var xLabel = labelGroup.append("text")
 .attr("x", 0)
 .attr("y", 20)
 .text("Age (years) ")
 .style("font-weight", "bold")
 
-// Create y label variable
+// Create y label
 chartGroup.append("text")
 .attr("transform", "rotate(-90)")
 .attr("x", 0 - (chartHeight/2))
