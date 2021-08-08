@@ -69,7 +69,7 @@ var circlesGroup = chartGroup.selectAll("circle")
 .append("circle")
 .attr("cx", d => xLinearScale(d.age))
 .attr("cy", d => yLinearScale(d.smokes))
-.attr("r", "20")
+.attr("r", "22")
 .attr("fill", "limegreen")
 .attr("opacity", ".5");
 
@@ -83,13 +83,16 @@ var textGroup = chartGroup.append("g").selectAll("text")
 .attr("x", d => xLinearScale(d.age) )
 .attr("y", d => yLinearScale(d.smokes))
 .text(d => d.abbr)
+.attr("text-anchor","middle")
 .attr("fill", "black")
 .attr("opacity", ".5");
  
+
+
 // Create a title 
 var chartTitle = chartGroup.append("g")
-.attr("x", chartWidth/2 + 100)             
-.attr("y", 100)
+.attr("x", chartWidth/2)             
+.attr("y", 0 -(chartMargin.top/2))
 .attr("text-anchor", "middle")  
 .style("font-size", "16px") 
 .style("text-decoration", "underline")  
