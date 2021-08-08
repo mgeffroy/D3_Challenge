@@ -2,14 +2,14 @@
 //// Make the space for the graph in the html ( go to html first to see where everything goes)
 // Define SVG area dimensions
 var svgWidth = 960;
-var svgHeight = 660;
+var svgHeight = 700;
 
 // Define the chart's margins as an object
 var chartMargin = {
-    top: 30,
-    right: 30,
-    bottom: 30,
-    left: 30
+    top: 35,
+    right: 35,
+    bottom: 65,
+    left: 55
   };
 
   // chart area minus margins
