@@ -86,9 +86,26 @@ var textGroup = chartGroup.append("g").selectAll("text")
 .attr("fill", "black")
 .attr("opacity", ".5");
 
-// Create the tooltips 
+// Create the Axis labels
+var labelGroup = chartGroup.append("g")
+.attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 20 })`);
 
+// Create x label variable
+var xLabel = labelGroup.append("text")
+.attr("x", 0)
+.attr("y", 20)
+.text("In Poverty (%) ")
+.style("font-weight", "bold")
 
+// Create y label variable
+chartGroup.append("text")
+.attr("transform", "rotate(-90)")
+.attr("x", 0 - (chartHeight/2))
+.attr("y", 0 - chartMargin.left)
+.attr("dy", "1em")
+.text("Locks Healthcare (%)")
+.style("font-weight", "bold")    
+            
 
 // closing parenthesis for csv reading 
 });
