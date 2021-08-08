@@ -2,11 +2,11 @@
 //// Make the space for the graph in the html ( go to html first to see where everything goes)
 // Define SVG area dimensions
 var svgWidth = 960;
-var svgHeight = 700;
+var svgHeight = 800;
 
 // Define the chart's margins as an object
 var chartMargin = {
-    top: 35,
+    top: 50,
     right: 35,
     bottom: 65,
     left: 55
@@ -86,6 +86,14 @@ var textGroup = chartGroup.append("g").selectAll("text")
 .attr("fill", "black")
 .attr("opacity", ".5");
  
+// Create a title 
+var chartTitle = chartGroup.append("g")
+.attr("x", chartWidth/2 + 100)             
+.attr("y", 100)
+.attr("text-anchor", "middle")  
+.style("font-size", "16px") 
+.style("text-decoration", "underline")  
+.text("Age vs Smoking");
 
 // Create the Axis labels
 var labelGroup = chartGroup.append("g")
