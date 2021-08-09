@@ -42,12 +42,12 @@ d3.csv("assets/data/data.csv").then(function(censusData){
 
 //get y scale (height) scaleLinear
 var yLinearScale = d3.scaleLinear()
-      .domain([5, d3.max(censusData, d => d.smokes)])
+      .domain([7, d3.max(censusData, d => d.smokes)])
       .range([chartHeight, 0])
 
 //get x scale (width) also scaleLinear
 var xLinearScale = d3.scaleLinear()
-      .domain([25, d3.max(censusData, d => d.age)])
+      .domain([28, d3.max(censusData, d => d.age)])
       .range([0, chartWidth]);
 
 // create axis functions
