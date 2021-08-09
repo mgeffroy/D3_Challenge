@@ -2,7 +2,7 @@
 //// Make the space for the graph in the html ( go to html first to see where everything goes)
 // Define SVG area dimensions
 var svgWidth = 960;
-var svgHeight = 800;
+var svgHeight = 830;
 
 // Define the chart's margins as an object
 var chartMargin = {
@@ -42,12 +42,12 @@ d3.csv("assets/data/data.csv").then(function(censusData){
 
 //get y scale (height) scaleLinear
 var yLinearScale = d3.scaleLinear()
-      .domain([0, d3.max(censusData, d => d.smokes)])
+      .domain([5, d3.max(censusData, d => d.smokes)])
       .range([chartHeight, 0])
 
 //get x scale (width) also scaleLinear
 var xLinearScale = d3.scaleLinear()
-      .domain([20, d3.max(censusData, d => d.age)])
+      .domain([25, d3.max(censusData, d => d.age)])
       .range([0, chartWidth]);
 
 // create axis functions
