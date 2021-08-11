@@ -18,3 +18,6 @@ Repository folder is organized as listed here:
 The final graph that compares age and smoker percentage in each state looks as follows: 
 
 ![image](https://user-images.githubusercontent.com/79372976/128652674-9e516cbb-968e-4385-b445-b96ba2a6fcc5.png)
+
+*This was created by: Mariana Geffroy*
+*for the Tecnológico de Monterrey Data Analysis Bootcamp*
